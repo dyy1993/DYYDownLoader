@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,8 +20,86 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="T5t-KR-VQJ">
+                                <rect key="frame" x="87.5" y="43" width="200" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="OoU-Mx-LHE"/>
+                                    <constraint firstAttribute="height" constant="2" id="uDd-eZ-ip7"/>
+                                </constraints>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rif-K7-Jw0">
+                                <rect key="frame" x="137.5" y="177" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="fMA-BX-ZEK"/>
+                                    <constraint firstAttribute="width" constant="100" id="qms-e2-suo"/>
+                                </constraints>
+                                <state key="normal" title="暂停"/>
+                                <connections>
+                                    <action selector="pause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VGJ-sg-cPi"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uJ1-7B-TYZ">
+                                <rect key="frame" x="87.5" y="60" width="200" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="IOn-PO-NbS"/>
+                                    <constraint firstAttribute="height" constant="2" id="iYU-0V-p6H"/>
+                                </constraints>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWs-uh-XfU">
+                                <rect key="frame" x="137.5" y="237" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="e7K-Yg-Z0p"/>
+                                    <constraint firstAttribute="width" constant="100" id="fTb-er-krA"/>
+                                </constraints>
+                                <state key="normal" title="取消"/>
+                                <connections>
+                                    <action selector="cancel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2iB-qb-Aa5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ds-Yr-yeU">
+                                <rect key="frame" x="137.5" y="320" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="eYs-1M-JUI"/>
+                                    <constraint firstAttribute="height" constant="30" id="n5Q-eW-MyY"/>
+                                </constraints>
+                                <state key="normal" title="取消并删除"/>
+                                <connections>
+                                    <action selector="cancleAndClean:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fe5-6M-QLo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9F-dw-2T5">
+                                <rect key="frame" x="137.5" y="85" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="LfK-fa-lyj"/>
+                                    <constraint firstAttribute="height" constant="30" id="dXr-TZ-VjU"/>
+                                </constraints>
+                                <state key="normal" title="下载/继续"/>
+                                <connections>
+                                    <action selector="downLoad:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WHd-fs-dLN"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iWs-uh-XfU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Jx-AI-isH"/>
+                            <constraint firstItem="rif-K7-Jw0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7x3-s2-cDP"/>
+                            <constraint firstItem="iWs-uh-XfU" firstAttribute="top" secondItem="rif-K7-Jw0" secondAttribute="bottom" constant="30" id="C2p-uj-WkS"/>
+                            <constraint firstItem="V9F-dw-2T5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yxv-92-rcI"/>
+                            <constraint firstItem="T5t-KR-VQJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bpU-Pt-pGO"/>
+                            <constraint firstItem="uJ1-7B-TYZ" firstAttribute="top" secondItem="T5t-KR-VQJ" secondAttribute="bottom" constant="15" id="dZd-1H-2qa"/>
+                            <constraint firstItem="T5t-KR-VQJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="23" id="gK6-K5-O5b"/>
+                            <constraint firstItem="4ds-Yr-yeU" firstAttribute="top" secondItem="iWs-uh-XfU" secondAttribute="bottom" constant="53" id="jA8-9t-bOj"/>
+                            <constraint firstItem="4ds-Yr-yeU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kIf-NM-cim"/>
+                            <constraint firstItem="uJ1-7B-TYZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kib-4b-lzx"/>
+                            <constraint firstItem="V9F-dw-2T5" firstAttribute="top" secondItem="uJ1-7B-TYZ" secondAttribute="bottom" constant="23" id="n2l-bC-j9O"/>
+                            <constraint firstItem="rif-K7-Jw0" firstAttribute="top" secondItem="V9F-dw-2T5" secondAttribute="bottom" constant="62" id="tCo-C1-OTw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="progressView" destination="T5t-KR-VQJ" id="cJd-Xa-iEY"/>
+                        <outlet property="progressView2" destination="uJ1-7B-TYZ" id="E4b-CU-6bb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
